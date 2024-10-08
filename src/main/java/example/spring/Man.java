@@ -1,8 +1,11 @@
 package example.spring;
 
-public class Man {
-    String name;
+import org.springframework.beans.factory.annotation.Autowired;
 
+public class Man {
+
+    String name;
+    @Autowired
     Car car;
 
     public void setCar(Car car) {

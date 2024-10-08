@@ -1,13 +1,22 @@
 package example.spring;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
-        example2();
+        example3();
 
     }
+    private static void example3(){
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        Car car = context.getBean("bibika", Car.class);
+        Man p1 = context.getBean("Petya", Man.class);
+        System.out.println("person 1: " +p1);
+        System.out.println("car = " + car);
+    }
+
      private static void example1(){
          ApplicationContext context1 = new ClassPathXmlApplicationContext("context_1.xml");
          Car c = context1.getBean("bibika",Car.class);

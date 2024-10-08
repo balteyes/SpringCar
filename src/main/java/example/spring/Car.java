@@ -1,8 +1,11 @@
 package example.spring;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Car {
     String model;
     int year;
+    @Autowired
     Man owner;
 
     public void setOwner(Man owner) {
